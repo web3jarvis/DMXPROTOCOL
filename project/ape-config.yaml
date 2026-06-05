@@ -1,0 +1,23 @@
+name: DMX Protocol
+
+plugins:
+  - name: solidity
+  - name: foundry
+
+ethereum:
+  default_network: local
+
+foundry:
+  host: http://127.0.0.1:8545
+
+dependencies:
+  - name: openzeppelin
+    github: OpenZeppelin/openzeppelin-contracts
+    version: 5.0.0
+    config_override:
+      compile:
+        exclude:
+          - "**/lib/openzeppelin-contracts/fv/**"
+          - "**/lib/openzeppelin-contracts/test/**"
+          - "**/lib/openzeppelin-contracts/mocks/**"
+          - "**/*.json"
