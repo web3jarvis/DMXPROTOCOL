@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract DMXToken is ERC20, Ownable {
 
-    constructor(address initialOwner) ERC20("DMX Protocol Token", "DMX") {
+    constructor(address initialOwner) ERC20("DMX Protocol Token", "DMX") Ownable(initialOwner) {
 
         _mint(initialOwner, 10000 * (10 ** 18));
     }
